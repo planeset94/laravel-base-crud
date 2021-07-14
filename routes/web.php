@@ -12,5 +12,15 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-//Leggere i dati - READ
+//Leggere tutti i dati - READ
 Route::get('comics', 'Comic_Controller@index')->name('comics.index');
+
+
+//Leggere dati specifici
+
+
+
+
+
+// Creare il form che serve a registare nuovi dati
+Route::get('comics/create','Comic_Controller@create')->name('comics.create');
