@@ -12,7 +12,5 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
-Route::get('/', function () {
-    return view('welcome');
-});
+//Leggere i dati - READ
+Route::get('comics', 'Comic_Controller@index')->name('comics.index');
