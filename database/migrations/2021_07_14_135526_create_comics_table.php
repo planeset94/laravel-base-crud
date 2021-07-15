@@ -15,10 +15,10 @@ class CreateComicsTable extends Migration
     {
         Schema::create('comics', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('title', 50)->nullable(false);
+            $table->string('title', 50)->nullable(true);
             $table->text('description');
             $table->text('image');
-            $table->float('price', 6,2)->nullable(false);
+            $table->float('price', 6,2)->nullable(true);
             $table->timestamps();
         });
     }

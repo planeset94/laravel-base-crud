@@ -24,3 +24,6 @@ Route::get('comics', 'Comic_Controller@index')->name('comics.index');
 
 // Creare il form che serve a registare nuovi dati
 Route::get('comics/create','Comic_Controller@create')->name('comics.create');
+
+//Registrare un nuovo dato
+Route::post('comics', 'Comic_Controller@store')->name('comics.store');

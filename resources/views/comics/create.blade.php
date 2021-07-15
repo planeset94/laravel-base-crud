@@ -9,7 +9,7 @@
 @section('content')
     <div class="container">
 
-        <form action="" method="post">
+        <form action="{{ route('comics.store') }}" method="post">
             @csrf
 
             <div class="form-group">
