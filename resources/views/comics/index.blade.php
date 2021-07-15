@@ -48,10 +48,13 @@
                         </td>
                         <td>
                             <a href="{{ route('comics.show', $comic->id) }}">View</a>
+                            <a class="pl-1" href="{{ route('comics.edit', $comic->id) }}">Edit</a>
                             <br>
-                            <a href="{{ route('comics.edit', $comic->id) }}">Edit</a>
-                            <br>
-                            <a href="#">Delete</a>
+                            <form class="pt-3" action="{{ route('comics.delete', $comic->id) }}" method="POST">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-outline-danger">Delete</button>
+                            </form>
 
                         </td>
                     </tr>

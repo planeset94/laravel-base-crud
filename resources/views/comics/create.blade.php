@@ -18,7 +18,7 @@
             <div class="form-group">
                 <label for="title">Title</label>
                 <input type="text" class="form-control" name="title" id="title" aria-describedby="helpId"
-                    placeholder="Insert comic's title">
+                    placeholder="Insert a title">
             </div>
             <div class="form-group">
                 <label for="description">Description</label>
@@ -27,11 +27,12 @@
             <div class="form-group">
                 <label for="image">Images</label>
                 <input type="text" class="form-control" name="image" id="image" aria-describedby="helpId"
-                    placeholder="Insert a description">
+                    placeholder="Place a link">
             </div>
             <div class="form-group">
                 <label for="price">Price</label>
-                <input type="text" class="form-control" name="price" id="price" aria-describedby="helpId" placeholder="">
+                <input type="text" class="form-control" name="price" id="price" aria-describedby="helpId"
+                    placeholder="Set the price">
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>

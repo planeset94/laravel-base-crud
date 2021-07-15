@@ -16,15 +16,16 @@ use Illuminate\Support\Facades\Route;
 Route::get('comics', 'Comic_Controller@index')->name('comics.index');
 
 
-//Leggere dati specifici
-Route::get('comics{comic}', 'Comic_Controller@show')->name('comics.show');
-
-
 // Creare il form che serve a registare nuovi dati
 Route::get('comics/create','Comic_Controller@create')->name('comics.create');
 
 //Registrare un nuovo dato
 Route::post('comics', 'Comic_Controller@store')->name('comics.store');
+
+
+//Leggere dati specifici
+Route::get('comics{comic}', 'Comic_Controller@show')->name('comics.show');
+
 
 //Modificare un record
 Route::get('comics/{comic}/edit', 'Comic_Controller@edit')->name('comics.edit');
@@ -35,4 +36,4 @@ Route::put('comics/{comic}','Comic_Controller@update')->name('comics.update');
 
 
 //Eliminare un record
-// Route::get('')->name('comics.destroy');
+Route::delete('comics/{comic}','Comic_Controller@destroy')->name('comics.delete');

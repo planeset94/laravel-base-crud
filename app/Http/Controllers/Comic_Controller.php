@@ -69,8 +69,7 @@ class Comic_Controller extends Controller
     {
         // ddd($comic);
         //Crea un file edit.blade.php e replica il contenuto di crea.blade.php
-        //  Devi però modificare tre cose: l'indirizzo di invio dei dati del form con : {{ route('comics.update', ['id' => $comic->id]) }}
-        //Bisogna usare la struttura delle array associative, perchè ci potrebbero essere più parametri.
+        // Devi però modificare tre cose: l'indirizzo di invio dei dati del form con : {{ route('comics.update',  $comic->id) }}
         //La seconda cosa da modificare sono i placeholder da eliminare e sostituire con i Value. Nel caso della textarea, inserisci il contenuto direttamente tra i tag.
         //La terza cosa è il metodo di invio dei dati: nel form mantieni il metodo post, ma sotto al token @csrf aggiungi  @method('PUT')
         //$comic è un record del DB
@@ -95,9 +94,7 @@ class Comic_Controller extends Controller
         Per farlo uso il metodo update(). */
         $comic->update($data);
         //Infine, chiedo che l'utente sia reindirizzato ad una pagian di mio gradimento. 
-        return redirect()->route('comics.index');
-
-        
+        return redirect()->route('comics.index');   
     }
 
     /**
@@ -108,6 +105,12 @@ class Comic_Controller extends Controller
      */
     public function destroy(Comic $comic)
     {
-        //
+        // $comic = Comic::find($id);
+        //chiedo che l'istanza $comic sia eliminata. 
+        $comic->delete();
+        //Laravel ha preso l'ID dell'istanza da eliminare da un pulsante (form submit) posto nel file index. 
+           
+        //Dopo aver eliminato il record, reindirizzo l'utente.
+        return redirect()->route('comics.index');  
     }
 }
