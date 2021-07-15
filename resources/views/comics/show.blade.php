@@ -34,4 +34,9 @@
     </div>
 
 
+    {{-- <form action="{{ route('comics.destroy', $comic->id) }}" method="post"></form>
+    @csrf
+    @method('DELETE') --}}
+
+
 @endsection

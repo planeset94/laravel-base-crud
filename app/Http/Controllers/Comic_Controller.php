@@ -37,12 +37,13 @@ class Comic_Controller extends Controller
      */
     public function store(Request $request)
     {
-        $data=$request->all();
+        // $data=$request->all();
         $newComic= new Comic;
-        $newComic->title= $data['title'];
-        $newComic->description=$data['description'];
-        $newComic->image=$data['image'];
-        $newComic->price=$data['price'];
+        // $newComic->title= $request->'title'];
+        $newComic->title= $request->title;
+        $newComic->description=$request->description;
+        $newComic->image=$request->image;
+        $newComic->price=$request->price;
         $newComic->save();
         return redirect()->route('comics.index');
     }
@@ -66,7 +67,16 @@ class Comic_Controller extends Controller
      */
     public function edit(Comic $comic)
     {
-        //
+        // ddd($comic);
+        //Crea un file edit.blade.php e replica il contenuto di crea.blade.php
+        //  Devi però modificare tre cose: l'indirizzo di invio dei dati del form con : {{ route('comics.update', ['id' => $comic->id]) }}
+        //Bisogna usare la struttura delle array associative, perchè ci potrebbero essere più parametri.
+        //La seconda cosa da modificare sono i placeholder da eliminare e sostituire con i Value. Nel caso della textarea, inserisci il contenuto direttamente tra i tag.
+        //La terza cosa è il metodo di invio dei dati: nel form mantieni il metodo post, ma sotto al token @csrf aggiungi  @method('PUT')
+        //$comic è un record del DB
+        //Dopo aver definito questa rotta, bisogna creare il metoto update
+        //Nel Model devi associare a una variabile $fillable i campi che possono essere modificati. 
+        return view('comics.edit', compact('comic'));
     }
 
     /**
@@ -78,7 +88,7 @@ class Comic_Controller extends Controller
      */
     public function update(Request $request, Comic $comic)
     {
-        //
+        //ddd($request)
     }
 
     /**
