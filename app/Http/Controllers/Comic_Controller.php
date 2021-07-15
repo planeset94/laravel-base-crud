@@ -89,6 +89,15 @@ class Comic_Controller extends Controller
     public function update(Request $request, Comic $comic)
     {
         //ddd($request)
+        //Passo tutti i dati del form alla variabile $data
+        $data=$request->all();
+        /* Ora passo i dati aggiorati ($data) alla variabile $comic che raprpesenta il record da aggiornare. 
+        Per farlo uso il metodo update(). */
+        $comic->update($data);
+        //Infine, chiedo che l'utente sia reindirizzato ad una pagian di mio gradimento. 
+        return redirect()->route('comics.index');
+
+        
     }
 
     /**

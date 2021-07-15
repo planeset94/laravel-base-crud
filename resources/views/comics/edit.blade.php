@@ -13,8 +13,8 @@
 @section('content')
     <div class="container">
 
-        <form action="#" method="post">
-            {{-- {{ route('comics.update', ['id' => $comic->id]) }} --}}
+        <form action="{{ route('comics.update', $comic->id) }}" method="post">
+
             @csrf
 
             @method('PUT')
@@ -32,11 +32,12 @@
             <div class="form-group">
                 <label for="image">Images</label>
                 <input type="text" class="form-control" name="image" id="image" aria-describedby="helpId"
-                    value="{{ $comic->title }}">
+                    value="{{ $comic->image }}">
             </div>
             <div class="form-group">
                 <label for="price">Price</label>
-                <input type="text" class="form-control" name="price" id="price" aria-describedby="helpId" placeholder="">
+                <input type="text" class="form-control" name="price" id="price" aria-describedby="helpId"
+                    value="{{ $comic->price }}">
             </div>
             <button type="submit" class="btn btn-primary">Submit</button>
         </form>

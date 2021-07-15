@@ -27,8 +27,10 @@ Route::get('comics/create','Comic_Controller@create')->name('comics.create');
 Route::post('comics', 'Comic_Controller@store')->name('comics.store');
 
 //Modificare un record
-
 Route::get('comics/{comic}/edit', 'Comic_Controller@edit')->name('comics.edit');
+
+ //Aggiornare un record sulla base di una modifica
+Route::put('comics/{comic}','Comic_Controller@update')->name('comics.update');
 
 
 

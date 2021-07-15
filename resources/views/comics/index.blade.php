@@ -26,6 +26,7 @@
                     <th>Title</th>
                     <th>Description</th>
                     <th>Price</th>
+                    <th>Operations</th>
                 </tr>
             </thead>
             <tbody>
@@ -44,6 +45,14 @@
                         </td>
                         <td>
                             <p class="price">Price: {{ $comic->price }}</p>
+                        </td>
+                        <td>
+                            <a href="{{ route('comics.show', $comic->id) }}">View</a>
+                            <br>
+                            <a href="{{ route('comics.edit', $comic->id) }}">Edit</a>
+                            <br>
+                            <a href="#">Delete</a>
+
                         </td>
                     </tr>
                 @endforeach
