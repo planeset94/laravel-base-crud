@@ -17,7 +17,7 @@ Route::get('comics', 'Comic_Controller@index')->name('comics.index');
 
 
 //Leggere dati specifici
-
+Route::get('comics{comic}', 'Comic_Controller@show')->name('comics.show');
 
 
 

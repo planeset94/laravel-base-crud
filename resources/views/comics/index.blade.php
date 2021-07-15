@@ -9,7 +9,11 @@
 
 
 @section('header')
-    <h1>Comics</h1>
+    <h2 class="pl-2">Comics</h2>
+    <a class="p-2" href="{{ route('comics.create') }}">
+        Create a new record
+    </a>
+
 @endsection
 
 @section('content')
@@ -28,7 +32,10 @@
 
                 @foreach ($comics as $comic)
                     <tr>
-                        <td scope="row"><img width="120px" src="{{ $comic->image }}" alt=""></td>
+                        <td scope="row">
+                            <a href="{{ route('comics.show', $comic->id) }}"><img width="120px"
+                                    src="{{ $comic->image }}" alt=""></a>
+                        </td>
                         <td>
                             <h5 class="title">Title: {{ $comic->title }}</h5>
                         </td>

@@ -3,7 +3,11 @@
 
 
 @section('header')
+    <a class="text-center pl-3" href="{{ route('comics.index') }}">
+        <small>Home Page</small>
+    </a>
     <h3 class="text-center py-5">Register a new record</h3>
+
 @endsection
 
 @section('content')
