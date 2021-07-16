@@ -54,17 +54,18 @@
 
                             {{-- modal --}}
                             <!-- Button trigger modal -->
-                            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#exampleModal">
+                            <button type="button" class="btn btn-danger" data-toggle="modal"
+                                data-target="#comics--{{ $comic->id }}">
                                 Delete
                             </button>
 
                             <!-- Modal -->
-                            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
-                                aria-hidden="true">
+                            <div class="modal fade" id="comics--{{ $comic->id }}" tabindex="-1"
+                                aria-labelledby="comics--{{ $comic->id }}" aria-hidden="true">
                                 <div class="modal-dialog">
                                     <div class="modal-content">
                                         <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                            <h5 class="modal-title" id="modal-title">Warning</h5>
                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                 <span aria-hidden="true">&times;</span>
                                             </button>
@@ -72,14 +73,18 @@
                                         <div class="modal-body">
                                             Permanently delete this record
                                         </div>
+
+                                        {{-- COMANDI INTERNI AL POP-UP --}}
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-primary" data-dismiss="modal">Go
                                                 Back</button>
+
+
                                             <form action="{{ route('comics.delete', $comic->id) }}" method="POST">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" id="danger-button"
-                                                    class="btn btn-outline-danger">Delete</button>
+                                                    class="btn btn-outline-danger">Confirm</button>
                                             </form>
                                         </div>
                                     </div>
