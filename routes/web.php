@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 //Leggere tutti i dati - READ
-Route::get('comics', 'Comic_Controller@index')->name('comics.index');
+Route::get('/', 'Comic_Controller@index')->name('comics.index');
 
 
 // Creare il form che serve a registare nuovi dati
